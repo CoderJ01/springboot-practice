@@ -11,16 +11,16 @@ import java.util.List;
 
 @Service
 public class StudentService {
-    private final StudentRepository studentReopistory;
+    private final StudentRepository studentRepository;
 
     @Autowired
-    public StudentService(StudentRepository studentReopistory) {
-        this.studentReopistory = studentReopistory;
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
     }
 
     // REST endpoint
     @GetMapping // allows method to be served
     public List<Student> getStudents() {
-        return studentReopistory.findAll();
+        return studentRepository.findAll();
     }
 }
